@@ -1,20 +1,82 @@
+<div class="w-11/12 mx-auto mt-36">
+  <div class="flex gap-4 items-center justify-center">
+    <ion-icon src="./assets/icon/sun-save-icon.svg" class="text-5xl"></ion-icon>
+    <div class="text-[27.5px]">
+      <span class="text-ligth">Sun</span>
+      <span class="text-primary">Save</span>
+    </div>
+  </div>
+
+  <div class="text-center mt-6">
+    <p class="w-10/12 mx-auto text-ligth font-extrabold text-[30px]">
+      Economize na sua conta de energia
+    </p>
+    <p class="mt-1 text-[26px]">
+      Quer <span class="text-primary text-justify">economizar</span> na sua conta de energia enquanto <span class="text-primary">ajuda o planeta?</span>
+    </p>
+  </div>
+
+  <div class="w-full mt-5 bg-dark border-primary border-2 mx-auto rounded-md text-center py-[13px] text-primary font-extrabold text-[19px]" (click)="openModal()">Simule aqui</div>
+</div>
+
+<!--
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Calculo de Consumo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Calculo de Consumo</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-item>
+      <ion-label>Selecione a Cidade</ion-label>
+      <ion-select [(ngModel)]="cidade" (ionChange)="onCityChange($event)">
+        <ion-select-option
+          *ngFor="let cidade of cidades"
+          [value]="cidade.city"
+        >
+          {{ cidade.city }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Valor da Conta (R$):</ion-label>
+      <ion-input [(ngModel)]="contaValor" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Consumo Estimado (kWh):</ion-label>
+      <ion-input [value]="consumoKwh" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Quantidade de Painéis:</ion-label>
+      <ion-input [value]="numPaineis" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Custo Total (R$):</ion-label>
+      <ion-input [value]="custoTotal" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Área Necessária (m²):</ion-label>
+      <ion-input [value]="areaNecessaria" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Geração Anual (kWh):</ion-label>
+      <ion-input [value]="geracaoAnual" readonly></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="calcularConsumo()">Calcular Consumo</ion-button>
   </div>
 </ion-content>
+-->
