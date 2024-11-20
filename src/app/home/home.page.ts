@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  isModalOpen = false;
   cidade: string = 'São Paulo';
   contaValor: number = 0;
   consumoKwh: number = 0;
@@ -52,7 +53,9 @@ export class HomePage {
 
   constructor() {}
 
-  openModal(){}
+  changeModal(){
+    this.isModalOpen = !this.isModalOpen;
+  }
 
   onCityChange(event: any) {
     const selectedCity = this.cidades.find(

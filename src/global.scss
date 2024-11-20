@@ -45,3 +45,25 @@ body {
   background-color: #181818;
   font-family: 'Poppins', sans-serif;
 }
+
+:root {
+  --ion-color-light: #D9D9D9;
+  --ion-color-dark: #181818;
+  --ion-color-primary: #5ADD75;
+
+  --ion-color-light-rgb: 217, 217, 217;
+  --ion-color-dark-rgb: 24, 24, 24;
+  --ion-color-primary-rgb: 90, 221, 117;
+
+  --ion-color-light-contrast: #000000;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-primary-contrast: #ffffff;
+
+  --ion-color-light-shade: #c8c8c8;
+  --ion-color-dark-shade: #1a1a1a;
+  --ion-color-primary-shade: #50b859;
+
+  --ion-color-light-tint: #e8e8e8;
+  --ion-color-dark-tint: #323232;
+  --ion-color-primary-tint: #6be97d;
+}

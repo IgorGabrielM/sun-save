@@ -7,7 +7,11 @@ module.exports = {
       dark: '#181818',
       primary: '#5ADD75'
     },
-    extend: {},
+    extend: {
+      animation: {
+        'bounce-slow': 'bounce 3s linear infinite',
+      }
+    },
   },
   plugins: [],
 }
