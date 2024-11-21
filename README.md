@@ -42,5 +42,3 @@ Nosso objetivo é fornecer uma plataforma acessível e prática para ajudar empr
 - **Empoderamento de Empresas:** Facilitar o acesso a ferramentas estratégicas para a transição energética.  
 - **Redução de Emissões:** Contribuir diretamente para a mitigação das mudanças climáticas.  
 - **Aumento da Eficiência:** Otimizar o uso de recursos em operações corporativas.  
-
----
