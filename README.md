@@ -4,8 +4,15 @@
 
 # SunSave: Gestão Estratégica para Empresas de Energia Sustentável  
 
-## 🛠 **Sobre o Projeto**  
 O **SunSave** é uma solução desenvolvida para simplificar a gestão de estratégias em empresas de energia renovável. Ele combina tecnologia e inteligência de dados para auxiliar gestores a planejar, monitorar e otimizar iniciativas voltadas para a transição energética sustentável.  
+
+## 🎤 **Pitch de Apresentação**  
+
+### 🎥 **Vídeo do Pitch**  
+[Assista ao vídeo do nosso pitch aqui](https://youtu.be/81X9ycMC2eQ)
+
+### 🖼 **Slides do Pitch**  
+[Acesse os slides do pitch aqui](https://www.figma.com/deck/ihJWa5kLvKJJRbZxq1sexF/GlobalSolution-24?node-id=19-66&node-type=slide&viewport=-10611%2C-2%2C0.84&t=jXuy3KY1cv379eLd-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1)  
 
 
 ## 🌍 **Motivação**  
