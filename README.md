@@ -3,7 +3,6 @@
 ## 🛠 **Sobre o Projeto**  
 O **SunSave** é uma solução desenvolvida para simplificar a gestão de estratégias em empresas de energia renovável. Ele combina tecnologia e inteligência de dados para auxiliar gestores a planejar, monitorar e otimizar iniciativas voltadas para a transição energética sustentável.  
 
----
 
 ## 🌍 **Motivação**  
 A transição para energias renováveis é uma necessidade urgente para combater a crise climática e promover uma sociedade mais inclusiva. No entanto, as empresas enfrentam desafios como:  
@@ -13,7 +12,6 @@ A transição para energias renováveis é uma necessidade urgente para combater
 
 Nosso objetivo é fornecer uma plataforma acessível e prática para ajudar empresas a liderar a transição energética de forma eficaz e sustentável.  
 
----
 
 ## 🎯 **Objetivos do Projeto**  
 - **Planejar Investimentos Verdes:** Identificar oportunidades com alto potencial de impacto e retorno financeiro.  
@@ -22,7 +20,6 @@ Nosso objetivo é fornecer uma plataforma acessível e prática para ajudar empr
 - **Monitorar Indicadores de Sustentabilidade:** Acompanhar métricas como redução de emissões de carbono.  
 - **Promover Sustentabilidade:** Desenvolver estratégias que engajem empresas em compromissos de longo prazo com a energia limpa.  
 
----
 
 ## 💡 **Funcionalidades do SunSave**  
 1. **Análise Estratégica:** Geração de relatórios personalizados para tomadas de decisão.  
@@ -30,7 +27,6 @@ Nosso objetivo é fornecer uma plataforma acessível e prática para ajudar empr
 3. **Dashboard Intuitivo:** Visualização clara de indicadores de sustentabilidade e eficiência.  
 4. **Sugestões Automáticas:** Recomendações para otimização de projetos energéticos.  
 
----
 
 ## 🚀 **Impactos Esperados**  
 - **Empoderamento de Empresas:** Facilitar o acesso a ferramentas estratégicas para a transição energética.  
