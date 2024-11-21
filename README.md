@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/eff56402-e5f5-46c4-8e39-cb76b4c939d2" alt="sunsave-logo" width="400px">
+</div>
+
 # SunSave: Gestão Estratégica para Empresas de Energia Sustentável  
 
 ## 🛠 **Sobre o Projeto**  
