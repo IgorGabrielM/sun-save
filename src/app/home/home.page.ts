@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {LoadingController, ModalController} from "@ionic/angular";
+import {ResultsPage} from "../results/results.page";
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage{
   isModalOpen = false;
-  cidade: string = 'São Paulo';
-  contaValor: number = 0;
+  cidade: string = null;
+  contaValor: number = null;
   consumoKwh: number = 0;
   numPaineis: number = 0;
   custoTotal: number = 0;
@@ -51,10 +53,17 @@ export class HomePage {
   custoPainel = 1500; // em R$ por painel
   areaPainel = 2; // em m² por painel
 
-  constructor() {}
+  constructor(
+    private modalCtrl: ModalController,
+    private loadingCtrl: LoadingController
+  ) {}
 
-  changeModal(){
-    this.isModalOpen = !this.isModalOpen;
+  changeModal(value?: boolean){
+    if (value !== undefined){
+      this.isModalOpen = value;
+    } else{
+      this.isModalOpen = !this.isModalOpen;
+    }
   }
 
   onCityChange(event: any) {
@@ -76,22 +85,39 @@ export class HomePage {
     }
   }
 
-  calcularPaineis() {
-    // Consumo mensal para consumo diário
+  async calcularPaineis() {
     const consumoDiario = this.consumoKwh / 30;
-
-    // Cálculo da energia que cada painel gera por dia
     const energiaDiariaPainel =
       this.capacidadePainel * this.irradiaçãoMediaDiaria * this.eficiencia;
-
-    // Número de painéis necessários
     this.numPaineis = Math.ceil(consumoDiario / energiaDiariaPainel);
-
-    // Cálculo do custo total e área necessária
     this.custoTotal = this.numPaineis * this.custoPainel;
     this.areaNecessaria = this.numPaineis * this.areaPainel;
-
-    // Geração anual de energia
     this.geracaoAnual = this.numPaineis * energiaDiariaPainel * 365;
+
+    const loading = await this.loadingCtrl.create({
+      message: 'Gerando sua simulação...',
+    });
+
+    loading.present();
+
+    setTimeout(async () => {
+      console.log(this.cidade)
+      const modal = await this.modalCtrl.create({
+        component: ResultsPage,
+        componentProps: {
+          data: {
+            cidade: this.cidade,
+            consumoDiario: this.consumoKwh / 30,
+            energiaDiariaPainel: this.capacidadePainel * this.irradiaçãoMediaDiaria * this.eficiencia,
+            numPaineis: Math.ceil(consumoDiario / energiaDiariaPainel),
+            custoTotal: this.numPaineis * this.custoPainel,
+            areaNecessaria: this.numPaineis * this.areaPainel,
+          }
+        }
+      });
+      modal.present();
+      this.isModalOpen = false;
+      loading.dismiss();
+    }, 1000)
   }
 }

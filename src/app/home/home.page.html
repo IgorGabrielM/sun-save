@@ -17,7 +17,7 @@
       </p>
     </div>
 
-    <div class="w-full mt-5 bg-dark border-primary border-2 mx-auto rounded-md text-center py-[13px] text-primary font-extrabold text-[19px]" (click)="changeModal()">
+    <div class="w-full mt-5 bg-dark border-primary border-2 mx-auto rounded-md text-center py-[13px] text-primary font-extrabold text-[19px] z-50" (click)="changeModal()">
       Simule aqui
     </div>
 
@@ -44,20 +44,20 @@
   </div>
 </ion-content>
 
-<ion-modal [isOpen]="isModalOpen" (didDismiss)="changeModal()">
+<ion-modal [isOpen]="isModalOpen" (didDismiss)="changeModal(false)">
   <ng-template>
-<!--    <ion-header>
+    <ion-header>
       <ion-toolbar>
-        <ion-title>Modal</ion-title>
         <ion-buttons slot="end">
-          <ion-button (click)="changeModal()">Close</ion-button>
+          <ion-button (click)="changeModal(false)">
+            <ion-icon name="close-circle" color="ligth"></ion-icon>
+          </ion-button>
         </ion-buttons>
       </ion-toolbar>
-    </ion-header>-->
+    </ion-header>
     <ion-content class="ion-padding">
-      <ion-item>
-        <ion-label>Selecione a Cidade</ion-label>
-        <ion-select [(ngModel)]="cidade" (ionChange)="onCityChange($event)">
+      <div class="flex flex-col gap-2 mt-3">
+        <ion-select label="Selecione sua Cidade" [(ngModel)]="cidade" (ionChange)="onCityChange($event)">
           <ion-select-option
             *ngFor="let cidade of cidades"
             [value]="cidade.city"
@@ -65,39 +65,12 @@
             {{ cidade.city }}
           </ion-select-option>
         </ion-select>
-      </ion-item>
+        <ion-input label="Valor da Conta (R$):" [(ngModel)]="contaValor" type="number"></ion-input>
 
-      <ion-item>
-        <ion-label>Valor da Conta (R$):</ion-label>
-        <ion-input [(ngModel)]="contaValor" type="number"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Consumo Estimado (kWh):</ion-label>
-        <ion-input [value]="consumoKwh" readonly></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Quantidade de Painéis:</ion-label>
-        <ion-input [value]="numPaineis" readonly></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Custo Total (R$):</ion-label>
-        <ion-input [value]="custoTotal" readonly></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Área Necessária (m²):</ion-label>
-        <ion-input [value]="areaNecessaria" readonly></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Geração Anual (kWh):</ion-label>
-        <ion-input [value]="geracaoAnual" readonly></ion-input>
-      </ion-item>
-
-      <ion-button expand="full" (click)="calcularConsumo()">Calcular Consumo</ion-button>
+        <div class="rounded-lg bg-dark border-primary border text-primary w-full text-center p-2 font-bold mt-2 disabled:text-opacity-40" (click)="calcularConsumo()">
+          Calcular Consumo
+        </div>
+      </div>
     </ion-content>
   </ng-template>
 </ion-modal>

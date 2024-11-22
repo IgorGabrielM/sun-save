@@ -1,0 +1,76 @@
+<ion-content class="ion-padding" color="ligth">
+  <div class="w-11/12 h-fit mx-auto mt-12 text-dark">
+    <div class="flex gap-4 items-center justify-center">
+      <ion-icon src="./assets/icon/sun-save-icon.svg" class="text-5xl"></ion-icon>
+      <div class="text-[27.5px]">
+        <span class="text-dark">Sun</span>
+        <span class="text-primary">Save</span>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <p class="w-10/12 mx-auto text-dark font-extrabold text-[26px]">
+        Resultados
+      </p>
+      <p class="text-[15px] text-[#71717A]">
+        Residência - {{ data.cidade }}
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-[30px] mt-8">
+      <div class="p-5 rounded-lg border-2 border-dark border-opacity-20 shadow-md flex justify-between">
+        <div>
+          <p class="text-sm">Energia gerada</p>
+          <span class="font-semibold text-xl">
+            {{ (data.consumoDiario * 365).toFixed(2) }} kWh
+          </span>
+          <span class="text-sm text-dark text-opacity-50">por ano</span>
+        </div>
+        <div>
+          <ion-icon name="flash" class="text-dark text-opacity-50"></ion-icon>
+        </div>
+      </div>
+      <div class="p-5 rounded-lg border-2 border-dark border-opacity-20 shadow-md flex justify-between">
+        <div>
+          <p class="text-sm">Custo médio</p>
+          <span class="font-semibold text-xl">
+            R${{ data.custoTotal.toFixed(2).replace('.', ',') }}
+          </span>
+        </div>
+        <div>
+          <ion-icon name="cash" class="text-dark text-opacity-50"></ion-icon>
+        </div>
+      </div>
+      <div class="p-5 rounded-lg border-2 border-dark border-opacity-20 shadow-md flex justify-between">
+        <div>
+          <p class="text-sm">Número de painéis</p>
+          <span class="font-semibold text-xl">
+            {{ data.numPaineis }} painéis
+          </span>
+        </div>
+      </div>
+      <div class="p-5 rounded-lg border-2 border-dark border-opacity-20 shadow-md flex justify-between">
+        <div>
+          <p class="text-sm">Área nescessária</p>
+          <span class="font-semibold text-xl">
+            {{ data.areaNecessaria.toString().replace('.', ',') }} m²
+          </span>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-lg border-2 border-dark border-opacity-20 shadow-md">
+        <p class="text-xl font-bold">Retorno de custo anual</p>
+        <div #chartRetornoCustos echarts [options]="optionsRetorno" class="chart-retorno-custos">
+        </div>
+      </div>
+
+      <div class="p-5 rounded-lg border-2 border-dark border-opacity-20 shadow-md">
+        <span class="text-xl font-bold">Economia mensal </span><span class="text-sm text-dark text-opacity-50">(primeirio ano)</span>
+        <div #chartEconomiaMensal echarts [options]="optionsEconomia" class="chart-retorno-custos">
+        </div>
+      </div>
+    </div>
+
+    <ion-button expand="full" class="font-bold text-dark mt-4" (click)="close()">Fechar</ion-button>
+  </div>
+</ion-content>
